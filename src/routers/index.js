@@ -35,6 +35,14 @@ const {
   deleteContent,
 } = require("../controllers/content");
 
+const {
+  createPaket,
+  getPakets,
+  getPaketDetail,
+  updatePaket,
+  deletePaket,
+} = require("../controllers/paket");
+
 /*routers */
 //auth
 router.post("/registers/post", registers);
@@ -72,5 +80,12 @@ router.get("/getcontents", getContents);
 router.get("/getcontent/:id", getContentDetail);
 router.patch("/updatecontent/:id", updateContent);
 router.delete("/deletecontent/:id", deleteContent);
+
+// paket
+router.post("/addpaket", createPaket);
+router.get("/getpakets", getPakets);
+router.get("/getpaket/:id", getPaketDetail);
+router.patch("/updatepaket/:id", updatePaket);
+router.delete("/deletepaket/:id", deletePaket);
 
 module.exports = router;
